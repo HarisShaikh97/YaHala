@@ -1,7 +1,6 @@
 import { useState } from "react"
 import {
 	View,
-	SafeAreaView,
 	Text,
 	TextInput,
 	TouchableOpacity,
@@ -9,6 +8,7 @@ import {
 } from "react-native"
 import { Image } from "expo-image"
 import { useFonts } from "expo-font"
+import FooterNav from "../components/footer-nav/FooterNav"
 
 export default function Page() {
 	const [fontsLoaded] = useFonts({
@@ -90,9 +90,7 @@ export default function Page() {
 					)}
 				</View>
 			</View>
-			<View style={styles.footerWrapper}>
-				<SafeAreaView style={styles.footerContainer}></SafeAreaView>
-			</View>
+			<FooterNav />
 		</View>
 	)
 }
@@ -184,16 +182,5 @@ const styles = StyleSheet.create({
 		fontSize: 15,
 		fontFamily: "Genos-Regular",
 		color: "#2796C4"
-	},
-	footerWrapper: {
-		width: "100%",
-		backgroundColor: "white"
-	},
-	footerContainer: {
-		width: "100%",
-		flexDirection: "row",
-		alignItems: "center",
-		justifyContent: "space-between",
-		paddingHorizontal: 15
 	}
 })
