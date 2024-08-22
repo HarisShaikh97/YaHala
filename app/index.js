@@ -8,11 +8,14 @@ import {
 } from "react-native"
 import { Image } from "expo-image"
 import { useFonts } from "expo-font"
+import { useRouter } from "expo-router"
 import FooterNav from "../components/footer-nav/FooterNav"
 
 export default function Page() {
+	const router = useRouter()
+
 	const [fontsLoaded] = useFonts({
-		"Genos-Medium": require("../assets/fonts/Genos/fonts/ttf/Genos-Medium.ttf"),
+		"Genos-Bold": require("../assets/fonts/Genos/fonts/ttf/Genos-Bold.ttf"),
 		"Genos-Regular": require("../assets/fonts/Genos/fonts/ttf/Genos-Regular.ttf")
 	})
 
@@ -67,7 +70,12 @@ export default function Page() {
 						/>
 					)}
 				</View>
-				<TouchableOpacity style={styles.forgotPasswordButton}>
+				<TouchableOpacity
+					style={styles.forgotPasswordButton}
+					onPress={() => {
+						router?.navigate("/reset-password")
+					}}
+				>
 					{fontsLoaded && (
 						<Text style={styles.forgotPasswordButtonText}>
 							Forgot password?
@@ -124,7 +132,7 @@ const styles = StyleSheet.create({
 	inputField: {
 		height: 45,
 		width: "100%",
-		borderRadius: 10,
+		borderRadius: 6.5,
 		backgroundColor: "white",
 		fontFamily: "Genos-Regular",
 		fontSize: 17.5,
@@ -148,9 +156,9 @@ const styles = StyleSheet.create({
 		textDecorationLine: "underline"
 	},
 	loginButton: {
-		height: 45,
+		height: 55,
 		width: "100%",
-		borderRadius: 25,
+		borderRadius: 30,
 		backgroundColor: "#2796C4",
 		alignItems: "center",
 		justifyContent: "center",
@@ -163,7 +171,7 @@ const styles = StyleSheet.create({
 	},
 	loginButtonText: {
 		fontSize: 20,
-		fontFamily: "Genos-Medium",
+		fontFamily: "Genos-Bold",
 		color: "white",
 		lineHeight: 25
 	},

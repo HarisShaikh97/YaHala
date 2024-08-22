@@ -1,8 +1,9 @@
 import { View, SafeAreaView, TouchableOpacity, StyleSheet } from "react-native"
 import { Image } from "expo-image"
-import { usePathname } from "expo-router"
+import { usePathname, useRouter } from "expo-router"
 
 export default function FooterNav() {
+	const router = useRouter()
 	const pathname = usePathname()
 
 	return (
@@ -58,6 +59,11 @@ export default function FooterNav() {
 							? styles.navButtonSelected
 							: styles.navButtonUnSelected
 					]}
+					onPress={() => {
+						if (pathname !== "/") {
+							router.navigate("/")
+						}
+					}}
 				>
 					<Image
 						source={
