@@ -1,9 +1,12 @@
 import { View, Text, TouchableOpacity, Modal, StyleSheet } from "react-native"
+import { useRouter } from "expo-router"
 import { BlurView } from "expo-blur"
 import { useFonts } from "expo-font"
 import PropTypes from "prop-types"
 
 export default function ForgetPasswordPopup({ showPopup, setShowPopup }) {
+	const router = useRouter()
+
 	const [fontsLoaded] = useFonts({
 		"Genos-Medium": require("../../assets/fonts/Genos/fonts/ttf/Genos-Medium.ttf"),
 		"Genos-Regular": require("../../assets/fonts/Genos/fonts/ttf/Genos-Regular.ttf")
@@ -37,7 +40,13 @@ export default function ForgetPasswordPopup({ showPopup, setShowPopup }) {
 								in the email to reset password
 							</Text>
 						)}
-						<TouchableOpacity style={styles.okButton}>
+						<TouchableOpacity
+							style={styles.okButton}
+							onPress={() => {
+								setShowPopup(false)
+								router.navigate("/verification-code")
+							}}
+						>
 							{fontsLoaded && (
 								<Text style={styles.okButtonText}>OK</Text>
 							)}

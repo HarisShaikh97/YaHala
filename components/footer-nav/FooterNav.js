@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
 		alignItems: "center"
 	},
 	footerContainer: {
-		width: "90%",
+		width: "95%",
 		flexDirection: "row",
 		alignItems: "center",
 		justifyContent: "space-between",
