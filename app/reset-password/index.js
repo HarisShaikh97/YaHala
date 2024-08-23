@@ -9,6 +9,7 @@ import {
 import { useFonts } from "expo-font"
 import BackButton from "../../components/back-button/BackButton"
 import FooterNav from "../../components/footer-nav/FooterNav"
+import ForgetPasswordPopup from "../../components/forget-password-popup/ForgetPasswordPopup"
 
 export default function Page() {
 	const [fontsLoaded] = useFonts({
@@ -17,9 +18,14 @@ export default function Page() {
 	})
 
 	const [isEmailFocused, setIsEmailFocused] = useState(false)
+	const [showPopup, setShowPopup] = useState(false)
 
 	return (
 		<View style={styles.wrapper}>
+			<ForgetPasswordPopup
+				showPopup={showPopup}
+				setShowPopup={setShowPopup}
+			/>
 			<View style={styles.container}>
 				<View style={styles.headerContainer}>
 					<BackButton />
@@ -59,7 +65,12 @@ export default function Page() {
 							Email sent to ex*****@gmail.com
 						</Text>
 					)}
-					<TouchableOpacity style={styles.sendButton}>
+					<TouchableOpacity
+						style={styles.sendButton}
+						onPress={() => {
+							setShowPopup(true)
+						}}
+					>
 						{fontsLoaded && (
 							<Text style={styles.sendButtonText}>Send</Text>
 						)}
