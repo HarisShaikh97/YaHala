@@ -80,14 +80,19 @@ export default function FooterNav() {
 				<TouchableOpacity
 					style={[
 						styles.navButton,
-						pathname === "/sign-up"
+						pathname?.includes("/sign-up")
 							? styles.navButtonSelected
 							: styles.navButtonUnSelected
 					]}
+					onPress={() => {
+						if (!pathname?.includes("/sign-up")) {
+							router.navigate("/sign-up/select-language")
+						}
+					}}
 				>
 					<Image
 						source={
-							pathname === "/sign-up"
+							pathname?.includes("/sign-up")
 								? require("../../assets/icons/sign-up-white.svg")
 								: require("../../assets/icons/sign-up.svg")
 						}

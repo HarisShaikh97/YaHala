@@ -246,7 +246,8 @@ const styles = StyleSheet.create({
 	inputField: {
 		flex: 1,
 		fontSize: 20,
-		fontFamily: "Genos-Regular"
+		fontFamily: "Genos-Regular",
+		lineHeight: 25
 	},
 	showPasswordIcon: {
 		height: 22.5,
