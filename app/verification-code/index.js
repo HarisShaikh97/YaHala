@@ -1,10 +1,13 @@
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native"
 import { Image } from "expo-image"
 import { useFonts } from "expo-font"
+import { useRouter } from "expo-router"
 import { OtpInput } from "react-native-otp-entry"
 import FooterNav from "../../components/footer-nav/FooterNav"
 
 export default function Page() {
+	const router = useRouter()
+
 	const [fontsLoaded] = useFonts({
 		"Genos-Medium": require("../../assets/fonts/Genos/fonts/ttf/Genos-Medium.ttf"),
 		"Genos-Regular": require("../../assets/fonts/Genos/fonts/ttf/Genos-Regular.ttf")
@@ -70,7 +73,12 @@ export default function Page() {
 							)}
 						</TouchableOpacity>
 					</View>
-					<TouchableOpacity style={styles.sendButton}>
+					<TouchableOpacity
+						style={styles.sendButton}
+						onPress={() => {
+							router.navigate("/create-password")
+						}}
+					>
 						{fontsLoaded && (
 							<Text style={styles.sendButtonText}>Send</Text>
 						)}
@@ -165,7 +173,7 @@ const styles = StyleSheet.create({
 	sendButton: {
 		height: 55,
 		width: "85%",
-		borderRadius: 15,
+		borderRadius: 10,
 		backgroundColor: "#2796C4",
 		alignItems: "center",
 		justifyContent: "center",
