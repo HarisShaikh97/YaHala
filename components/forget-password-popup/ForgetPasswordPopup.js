@@ -44,7 +44,9 @@ export default function ForgetPasswordPopup({ showPopup, setShowPopup }) {
 							style={styles.okButton}
 							onPress={() => {
 								setShowPopup(false)
-								router.navigate("/verification-code")
+								router.navigate(
+									"/forget-password/verification-code"
+								)
 							}}
 						>
 							{fontsLoaded && (

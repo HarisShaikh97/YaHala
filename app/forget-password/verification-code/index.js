@@ -3,14 +3,14 @@ import { Image } from "expo-image"
 import { useFonts } from "expo-font"
 import { useRouter } from "expo-router"
 import { OtpInput } from "react-native-otp-entry"
-import FooterNav from "../../components/footer-nav/FooterNav"
+import FooterNav from "../../../components/footer-nav/FooterNav"
 
 export default function Page() {
 	const router = useRouter()
 
 	const [fontsLoaded] = useFonts({
-		"Genos-Medium": require("../../assets/fonts/Genos/fonts/ttf/Genos-Medium.ttf"),
-		"Genos-Regular": require("../../assets/fonts/Genos/fonts/ttf/Genos-Regular.ttf")
+		"Genos-Medium": require("../../../assets/fonts/Genos/fonts/ttf/Genos-Medium.ttf"),
+		"Genos-Regular": require("../../../assets/fonts/Genos/fonts/ttf/Genos-Regular.ttf")
 	})
 
 	return (
@@ -21,7 +21,7 @@ export default function Page() {
 				)}
 				<View style={styles.bodyContainer}>
 					<Image
-						source={require("../../assets/images/verification-code.png")}
+						source={require("../../../assets/images/verification-code.png")}
 						style={styles.bgImage}
 						contentFit="contain"
 					/>
@@ -76,7 +76,7 @@ export default function Page() {
 					<TouchableOpacity
 						style={styles.sendButton}
 						onPress={() => {
-							router.navigate("/create-password")
+							router.navigate("/forget-password/create-password")
 						}}
 					>
 						{fontsLoaded && (

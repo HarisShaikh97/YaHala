@@ -10,16 +10,16 @@ import { useFonts } from "expo-font"
 import { Image } from "expo-image"
 import { useRouter } from "expo-router"
 import Feather from "@expo/vector-icons/Feather"
-import BackButton from "../../components/back-button/BackButton"
-import FooterNav from "../../components/footer-nav/FooterNav"
+import BackButton from "../../../components/back-button/BackButton"
+import FooterNav from "../../../components/footer-nav/FooterNav"
 
 export default function Page() {
 	const router = useRouter()
 
 	const [fontsLoaded] = useFonts({
-		"Genos-Bold": require("../../assets/fonts/Genos/fonts/ttf/Genos-Bold.ttf"),
-		"Genos-Medium": require("../../assets/fonts/Genos/fonts/ttf/Genos-Medium.ttf"),
-		"Genos-Regular": require("../../assets/fonts/Genos/fonts/ttf/Genos-Regular.ttf")
+		"Genos-Bold": require("../../../assets/fonts/Genos/fonts/ttf/Genos-Bold.ttf"),
+		"Genos-Medium": require("../../../assets/fonts/Genos/fonts/ttf/Genos-Medium.ttf"),
+		"Genos-Regular": require("../../../assets/fonts/Genos/fonts/ttf/Genos-Regular.ttf")
 	})
 
 	const [showPassword, setShowPassword] = useState(false)
@@ -65,8 +65,8 @@ export default function Page() {
 								<Image
 									source={
 										showPassword
-											? require("../../assets/icons/eye-closed.svg")
-											: require("../../assets/icons/eye.svg")
+											? require("../../../assets/icons/eye-closed.svg")
+											: require("../../../assets/icons/eye.svg")
 									}
 									style={styles.showPasswordIcon}
 									contentFit="contain"
@@ -95,8 +95,8 @@ export default function Page() {
 								<Image
 									source={
 										showConfirmPassword
-											? require("../../assets/icons/eye-closed.svg")
-											: require("../../assets/icons/eye.svg")
+											? require("../../../assets/icons/eye-closed.svg")
+											: require("../../../assets/icons/eye.svg")
 									}
 									style={styles.showPasswordIcon}
 									contentFit="contain"

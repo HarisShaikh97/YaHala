@@ -55,7 +55,8 @@ export default function FooterNav() {
 				<TouchableOpacity
 					style={[
 						styles.navButton,
-						pathname === "/"
+						pathname === "/" ||
+						pathname?.includes("/forget-password")
 							? styles.navButtonSelected
 							: styles.navButtonUnSelected
 					]}
@@ -67,7 +68,8 @@ export default function FooterNav() {
 				>
 					<Image
 						source={
-							pathname === "/"
+							pathname === "/" ||
+							pathname?.includes("/forget-password")
 								? require("../../assets/icons/sign-in-white.svg")
 								: require("../../assets/icons/sign-in.svg")
 						}

@@ -7,15 +7,15 @@ import {
 	StyleSheet
 } from "react-native"
 import { useFonts } from "expo-font"
-import BackButton from "../../components/back-button/BackButton"
-import FooterNav from "../../components/footer-nav/FooterNav"
-import ForgetPasswordPopup from "../../components/forget-password-popup/ForgetPasswordPopup"
+import BackButton from "../../../components/back-button/BackButton"
+import FooterNav from "../../../components/footer-nav/FooterNav"
+import ForgetPasswordPopup from "../../../components/forget-password-popup/ForgetPasswordPopup"
 
 export default function Page() {
 	const [fontsLoaded] = useFonts({
-		"Genos-Bold": require("../../assets/fonts/Genos/fonts/ttf/Genos-Bold.ttf"),
-		"Genos-Medium": require("../../assets/fonts/Genos/fonts/ttf/Genos-Medium.ttf"),
-		"Genos-Regular": require("../../assets/fonts/Genos/fonts/ttf/Genos-Regular.ttf")
+		"Genos-Bold": require("../../../assets/fonts/Genos/fonts/ttf/Genos-Bold.ttf"),
+		"Genos-Medium": require("../../../assets/fonts/Genos/fonts/ttf/Genos-Medium.ttf"),
+		"Genos-Regular": require("../../../assets/fonts/Genos/fonts/ttf/Genos-Regular.ttf")
 	})
 
 	const [isEmailFocused, setIsEmailFocused] = useState(false)

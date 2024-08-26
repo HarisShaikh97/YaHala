@@ -73,7 +73,7 @@ export default function Page() {
 				<TouchableOpacity
 					style={styles.forgotPasswordButton}
 					onPress={() => {
-						router?.navigate("/reset-password")
+						router?.navigate("/forget-password/reset-password")
 					}}
 				>
 					{fontsLoaded && (
