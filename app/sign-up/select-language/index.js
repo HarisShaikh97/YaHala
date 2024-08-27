@@ -125,7 +125,12 @@ export default function Page() {
 						})}
 					</View>
 				</View>
-				<FormButton title="Save Changes" onPress={() => {}} />
+				<FormButton
+					title="Save Changes"
+					onPress={() => {
+						router.navigate("/sign-up/select-gender")
+					}}
+				/>
 			</View>
 			<FooterNav />
 		</View>
