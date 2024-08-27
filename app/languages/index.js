@@ -2,43 +2,43 @@ import { useState } from "react"
 import { View, Text, StyleSheet } from "react-native"
 import { useFonts } from "expo-font"
 import { useRouter } from "expo-router"
-import LanguageSearchBar from "../../../components/language-search-bar/LanguageSearchBar"
-import LanguageOption from "../../../components/language-option/LanguageOption"
-import FormButton from "../../../components/form-button/FormButton"
-import FooterNav from "../../../components/footer-nav/FooterNav"
+import LanguageSearchBar from "../../components/language-search-bar/LanguageSearchBar"
+import LanguageOption from "../../components/language-option/LanguageOption"
+import FormButton from "../../components/form-button/FormButton"
+import FooterNav from "../../components/footer-nav/FooterNav"
 
 export default function Page() {
 	const router = useRouter()
 
 	const [fontsLoaded] = useFonts({
-		"Genos-Medium": require("../../../assets/fonts/Genos/fonts/ttf/Genos-Medium.ttf")
+		"Genos-Medium": require("../../assets/fonts/Genos/fonts/ttf/Genos-Medium.ttf")
 	})
 
 	const languages = [
 		{
 			id: 1,
 			title: "English",
-			image: require("../../../assets/images/english.png")
+			image: require("../../assets/images/english.png")
 		},
 		{
 			id: 2,
 			title: "Indonesian",
-			image: require("../../../assets/images/indonesian.png")
+			image: require("../../assets/images/indonesian.png")
 		},
 		{
 			id: 3,
 			title: "Japanese",
-			image: require("../../../assets/images/japanese.png")
+			image: require("../../assets/images/japanese.png")
 		},
 		{
 			id: 4,
 			title: "French",
-			image: require("../../../assets/images/french.png")
+			image: require("../../assets/images/french.png")
 		},
 		{
 			id: 5,
 			title: "Chinese",
-			image: require("../../../assets/images/chinese.png")
+			image: require("../../assets/images/chinese.png")
 		}
 	]
 
@@ -68,7 +68,7 @@ export default function Page() {
 				<FormButton
 					title="Save Changes"
 					onPress={() => {
-						router.navigate("/sign-up/select-gender")
+						router.navigate("/")
 					}}
 				/>
 			</View>

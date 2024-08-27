@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity, StyleSheet } from "react-native"
 import { Image } from "expo-image"
 import { useFonts } from "expo-font"
 import { useRouter } from "expo-router"
-import { OtpInput } from "react-native-otp-entry"
+import OtpInputField from "../../../components/otp-input/OtpInput"
 import FooterNav from "../../../components/footer-nav/FooterNav"
 
 export default function Page() {
@@ -35,21 +35,7 @@ export default function Page() {
 							prelookstudio@gmail.com
 						</Text>
 					)}
-					<View style={styles.otpInputWrapper}>
-						{fontsLoaded && (
-							<OtpInput
-								numberOfDigits={4}
-								theme={{
-									pinCodeContainerStyle:
-										styles.pinCodeContainer,
-									pinCodeTextStyle: styles.pinCodeText,
-									focusedPinCodeContainerStyle:
-										styles.activePinCodeContainer,
-									focusStickStyle: styles.focusStick
-								}}
-							/>
-						)}
-					</View>
+					<OtpInputField />
 					<View style={styles.resendTextWrapper}>
 						{fontsLoaded && (
 							<Text
@@ -129,31 +115,6 @@ const styles = StyleSheet.create({
 		opacity: 0.6,
 		marginVertical: 5,
 		textAlign: "center"
-	},
-	otpInputWrapper: {
-		width: 250,
-		marginTop: 15
-	},
-	pinCodeContainer: {
-		height: 50,
-		width: 50,
-		borderRadius: 10,
-		borderColor: "#EEEEEE",
-		backgroundColor: "white"
-	},
-	activePinCodeContainer: {
-		borderWidth: 1,
-		borderColor: "#FE724C"
-	},
-	pinCodeText: {
-		fontSize: 30,
-		color: "#FE724C",
-		fontFamily: "Genos-Regular",
-		lineHeight: 35
-	},
-	focusStick: {
-		height: 25,
-		backgroundColor: "#FFC529"
 	},
 	resendTextWrapper: {
 		flexDirection: "row",

@@ -12,14 +12,19 @@ export default function FooterNav() {
 				<TouchableOpacity
 					style={[
 						styles.navButton,
-						pathname === "/language"
+						pathname === "/languages"
 							? styles.navButtonSelected
 							: styles.navButtonUnSelected
 					]}
+					onPress={() => {
+						if (pathname !== "/languages") {
+							router.navigate("/languages")
+						}
+					}}
 				>
 					<Image
 						source={
-							pathname === "/language"
+							pathname === "/languages"
 								? require("../../assets/icons/language-white.svg")
 								: require("../../assets/icons/language.svg")
 						}
