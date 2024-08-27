@@ -1,19 +1,13 @@
 import { useState } from "react"
-import {
-	View,
-	Text,
-	TextInput,
-	TouchableOpacity,
-	StyleSheet
-} from "react-native"
+import { View, Text, TextInput, StyleSheet } from "react-native"
 import { useFonts } from "expo-font"
-import BackButton from "../../../components/back-button/BackButton"
+import ScreenHeader from "../../../components/screen-header/ScreenHeader"
+import FormButton from "../../../components/form-button/FormButton"
 import FooterNav from "../../../components/footer-nav/FooterNav"
 import ForgetPasswordPopup from "../../../components/forget-password-popup/ForgetPasswordPopup"
 
 export default function Page() {
 	const [fontsLoaded] = useFonts({
-		"Genos-Bold": require("../../../assets/fonts/Genos/fonts/ttf/Genos-Bold.ttf"),
 		"Genos-Medium": require("../../../assets/fonts/Genos/fonts/ttf/Genos-Medium.ttf"),
 		"Genos-Regular": require("../../../assets/fonts/Genos/fonts/ttf/Genos-Regular.ttf")
 	})
@@ -28,15 +22,7 @@ export default function Page() {
 				setShowPopup={setShowPopup}
 			/>
 			<View style={styles.container}>
-				<View style={styles.headerContainer}>
-					<BackButton />
-					{fontsLoaded && (
-						<Text style={styles.headerTitleText}>
-							Forget Password
-						</Text>
-					)}
-					<View style={styles.emptyView} />
-				</View>
+				<ScreenHeader title="Forget Password" />
 				<View style={styles.bodyContainer}>
 					{fontsLoaded && (
 						<Text style={styles.titleText}>Reset Password</Text>
@@ -66,16 +52,12 @@ export default function Page() {
 							Email sent to ex*****@gmail.com
 						</Text>
 					)}
-					<TouchableOpacity
-						style={styles.sendButton}
+					<FormButton
+						title="Send"
 						onPress={() => {
 							setShowPopup(true)
 						}}
-					>
-						{fontsLoaded && (
-							<Text style={styles.sendButtonText}>Send</Text>
-						)}
-					</TouchableOpacity>
+					/>
 				</View>
 			</View>
 			<FooterNav />
@@ -92,12 +74,6 @@ const styles = StyleSheet.create({
 		flexDirection: "column",
 		paddingHorizontal: 20,
 		paddingTop: 25
-	},
-	headerContainer: {
-		width: "100%",
-		flexDirection: "row",
-		alignItems: "center",
-		justifyContent: "space-between"
 	},
 	inputField: {
 		height: 45,
@@ -117,14 +93,6 @@ const styles = StyleSheet.create({
 	inputFieldUnFocused: {
 		borderColor: "white"
 	},
-	headerTitleText: {
-		fontSize: 22.5,
-		fontFamily: "Genos-Medium",
-		lineHeight: 27.5
-	},
-	emptyView: {
-		width: 35
-	},
 	bodyContainer: {
 		width: "100%",
 		flexDirection: "column",
@@ -143,26 +111,7 @@ const styles = StyleSheet.create({
 	messageText: {
 		fontSize: 12.5,
 		fontFamily: "Genos-Regular",
-		color: "#6C63FF"
-	},
-	sendButton: {
-		height: 55,
-		width: "100%",
-		borderRadius: 30,
-		backgroundColor: "#2796C4",
-		alignItems: "center",
-		justifyContent: "center",
-		marginTop: 75,
-		elevation: 5,
-		shadowOffset: { width: 2.5, height: 5 },
-		shadowOpacity: 0.3,
-		shadowRadius: 3,
-		shadowColor: "#5F9CE3"
-	},
-	sendButtonText: {
-		fontSize: 20,
-		fontFamily: "Genos-Bold",
-		color: "white",
-		lineHeight: 25
+		color: "#6C63FF",
+		marginBottom: 75
 	}
 })

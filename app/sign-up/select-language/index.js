@@ -10,6 +10,7 @@ import { Image } from "expo-image"
 import { useFonts } from "expo-font"
 import { useRouter } from "expo-router"
 import AntDesign from "@expo/vector-icons/AntDesign"
+import FormButton from "../../../components/form-button/FormButton"
 import FooterNav from "../../../components/footer-nav/FooterNav"
 
 export default function Page() {
@@ -124,11 +125,7 @@ export default function Page() {
 						})}
 					</View>
 				</View>
-				<TouchableOpacity style={styles.saveButton}>
-					{fontsLoaded && (
-						<Text style={styles.saveButtonText}>Save Changes</Text>
-					)}
-				</TouchableOpacity>
+				<FormButton title="Save Changes" onPress={() => {}} />
 			</View>
 			<FooterNav />
 		</View>
@@ -177,7 +174,8 @@ const styles = StyleSheet.create({
 	listContainer: {
 		width: "100%",
 		flexDirection: "column",
-		gap: 15
+		gap: 15,
+		marginBottom: 50
 	},
 	languageOptionContainer: {
 		height: 50,
@@ -228,25 +226,5 @@ const styles = StyleSheet.create({
 	checkBoxUnChecked: {
 		borderWidth: 1,
 		borderColor: "#E2E8F0"
-	},
-	saveButton: {
-		height: 55,
-		width: "100%",
-		borderRadius: 30,
-		backgroundColor: "#2796C4",
-		alignItems: "center",
-		justifyContent: "center",
-		marginTop: 50,
-		elevation: 5,
-		shadowOffset: { width: 2.5, height: 5 },
-		shadowOpacity: 0.3,
-		shadowRadius: 3,
-		shadowColor: "#5F9CE3"
-	},
-	saveButtonText: {
-		fontSize: 20,
-		fontFamily: "Genos-Bold",
-		color: "white",
-		lineHeight: 25
 	}
 })

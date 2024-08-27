@@ -10,15 +10,14 @@ import { useFonts } from "expo-font"
 import { Image } from "expo-image"
 import { useRouter } from "expo-router"
 import Feather from "@expo/vector-icons/Feather"
-import BackButton from "../../../components/back-button/BackButton"
+import ScreenHeader from "../../../components/screen-header/ScreenHeader"
+import FormButton from "../../../components/form-button/FormButton"
 import FooterNav from "../../../components/footer-nav/FooterNav"
 
 export default function Page() {
 	const router = useRouter()
 
 	const [fontsLoaded] = useFonts({
-		"Genos-Bold": require("../../../assets/fonts/Genos/fonts/ttf/Genos-Bold.ttf"),
-		"Genos-Medium": require("../../../assets/fonts/Genos/fonts/ttf/Genos-Medium.ttf"),
 		"Genos-Regular": require("../../../assets/fonts/Genos/fonts/ttf/Genos-Regular.ttf")
 	})
 
@@ -28,15 +27,7 @@ export default function Page() {
 	return (
 		<View style={styles.wrapper}>
 			<View style={styles.container}>
-				<View style={styles.headerContainer}>
-					<BackButton />
-					{fontsLoaded && (
-						<Text style={styles.headerTitleText}>
-							Create Password
-						</Text>
-					)}
-					<View style={styles.emptyView} />
-				</View>
+				<ScreenHeader title="Create Password" />
 				<View style={styles.bodyContainer}>
 					{fontsLoaded && (
 						<Text style={styles.descriptionText}>
@@ -145,18 +136,12 @@ export default function Page() {
 							)}
 						</View>
 					</View>
-					<TouchableOpacity
-						style={styles.continueButton}
+					<FormButton
+						title="Continue"
 						onPress={() => {
 							router.navigate("/")
 						}}
-					>
-						{fontsLoaded && (
-							<Text style={styles.continueButtonText}>
-								Continue
-							</Text>
-						)}
-					</TouchableOpacity>
+					/>
 				</View>
 			</View>
 			<FooterNav />
@@ -174,20 +159,6 @@ const styles = StyleSheet.create({
 		paddingHorizontal: 20,
 		paddingTop: 25
 	},
-	headerContainer: {
-		width: "100%",
-		flexDirection: "row",
-		alignItems: "center",
-		justifyContent: "space-between"
-	},
-	headerTitleText: {
-		fontSize: 22.5,
-		fontFamily: "Genos-Medium",
-		lineHeight: 27.5
-	},
-	emptyView: {
-		width: 35
-	},
 	bodyContainer: {
 		width: "100%",
 		flexDirection: "column",
@@ -202,26 +173,6 @@ const styles = StyleSheet.create({
 		marginVertical: 5,
 		textAlign: "center",
 		marginHorizontal: 15
-	},
-	continueButton: {
-		height: 55,
-		width: "100%",
-		borderRadius: 30,
-		backgroundColor: "#2796C4",
-		alignItems: "center",
-		justifyContent: "center",
-		marginTop: 20,
-		elevation: 5,
-		shadowOffset: { width: 2.5, height: 5 },
-		shadowOpacity: 0.3,
-		shadowRadius: 3,
-		shadowColor: "#5F9CE3"
-	},
-	continueButtonText: {
-		fontSize: 20,
-		fontFamily: "Genos-Bold",
-		color: "white",
-		lineHeight: 25
 	},
 	inputFieldWrapper: {
 		width: "100%",
@@ -256,7 +207,8 @@ const styles = StyleSheet.create({
 	listContainer: {
 		width: "100%",
 		flexDirection: "column",
-		gap: 10
+		gap: 10,
+		marginBottom: 10
 	},
 	listItemContainer: {
 		flexDirection: "row",

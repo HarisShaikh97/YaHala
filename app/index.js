@@ -9,13 +9,13 @@ import {
 import { Image } from "expo-image"
 import { useFonts } from "expo-font"
 import { useRouter } from "expo-router"
+import FormButton from "../components/form-button/FormButton"
 import FooterNav from "../components/footer-nav/FooterNav"
 
 export default function Page() {
 	const router = useRouter()
 
 	const [fontsLoaded] = useFonts({
-		"Genos-Bold": require("../assets/fonts/Genos/fonts/ttf/Genos-Bold.ttf"),
 		"Genos-Regular": require("../assets/fonts/Genos/fonts/ttf/Genos-Regular.ttf")
 	})
 
@@ -82,11 +82,7 @@ export default function Page() {
 						</Text>
 					)}
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.loginButton}>
-					{fontsLoaded && (
-						<Text style={styles.loginButtonText}>Login</Text>
-					)}
-				</TouchableOpacity>
+				<FormButton title="Login" onPress={() => {}} />
 				<View style={styles.signupTextSection}>
 					{fontsLoaded && (
 						<Text style={styles.accountText}>
@@ -147,6 +143,7 @@ const styles = StyleSheet.create({
 	},
 	forgotPasswordButton: {
 		marginTop: 15,
+		marginBottom: 25,
 		alignSelf: "flex-end"
 	},
 	forgotPasswordButtonText: {
@@ -154,26 +151,6 @@ const styles = StyleSheet.create({
 		color: "#316AAC",
 		fontFamily: "Genos-Regular",
 		textDecorationLine: "underline"
-	},
-	loginButton: {
-		height: 55,
-		width: "100%",
-		borderRadius: 30,
-		backgroundColor: "#2796C4",
-		alignItems: "center",
-		justifyContent: "center",
-		marginTop: 35,
-		elevation: 5,
-		shadowOffset: { width: 2.5, height: 5 },
-		shadowOpacity: 0.3,
-		shadowRadius: 3,
-		shadowColor: "#5F9CE3"
-	},
-	loginButtonText: {
-		fontSize: 20,
-		fontFamily: "Genos-Bold",
-		color: "white",
-		lineHeight: 25
 	},
 	signupTextSection: {
 		flexDirection: "row",
