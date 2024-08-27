@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
 		fontSize: 20,
 		fontFamily: "Genos-Bold",
 		color: "white",
-		lineHeight: 25
+		lineHeight: 22.5
 	}
 })
 

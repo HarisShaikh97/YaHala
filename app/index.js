@@ -73,7 +73,7 @@ export default function Page() {
 				<TouchableOpacity
 					style={styles.forgotPasswordButton}
 					onPress={() => {
-						router?.navigate("/forget-password/reset-password")
+						router.navigate("/forget-password/reset-password")
 					}}
 				>
 					{fontsLoaded && (
@@ -89,9 +89,15 @@ export default function Page() {
 							Don{"'"}t have an account?
 						</Text>
 					)}
-					{fontsLoaded && (
-						<Text style={styles.signupText}>Sign Up</Text>
-					)}
+					<TouchableOpacity
+						onPress={() => {
+							router.navigate("/sign-up/select-language")
+						}}
+					>
+						{fontsLoaded && (
+							<Text style={styles.signupText}>Sign Up</Text>
+						)}
+					</TouchableOpacity>
 				</View>
 			</View>
 			<FooterNav />

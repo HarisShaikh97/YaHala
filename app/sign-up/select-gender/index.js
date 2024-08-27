@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { View, StyleSheet } from "react-native"
+import { useRouter } from "expo-router"
 import ScreenHeader from "../../../components/screen-header/ScreenHeader"
 import GenderOption from "../../../components/gender-option/GenderOption"
 import SignUpBackButton from "../../../components/sign-up-back-button/SignUpBackButton"
@@ -7,6 +8,8 @@ import SignUpNextButton from "../../../components/sign-up-next-button/SignUpNext
 import FooterNav from "../../../components/footer-nav/FooterNav"
 
 export default function Page() {
+	const router = useRouter()
+
 	const genders = [
 		{
 			id: 1,
@@ -39,7 +42,11 @@ export default function Page() {
 					})}
 				</View>
 				<View style={styles.actionButtonsWrapper}>
-					<SignUpBackButton onPress={() => {}} />
+					<SignUpBackButton
+						onPress={() => {
+							router.back()
+						}}
+					/>
 					<SignUpNextButton onPress={() => {}} />
 				</View>
 			</View>

@@ -1,4 +1,11 @@
-import { View, Text, TouchableOpacity, Modal, StyleSheet } from "react-native"
+import {
+	View,
+	Text,
+	TouchableOpacity,
+	Modal,
+	Platform,
+	StyleSheet
+} from "react-native"
 import { useRouter } from "expo-router"
 import { BlurView } from "expo-blur"
 import { useFonts } from "expo-font"
@@ -21,7 +28,10 @@ export default function ForgetPasswordPopup({ showPopup, setShowPopup }) {
 				setShowPopup(false)
 			}}
 		>
-			<BlurView intensity={15} style={styles.popupWrapper}>
+			<BlurView
+				intensity={Platform.OS === "android" ? 150 : 15}
+				style={styles.popupWrapper}
+			>
 				<View style={styles.popupContainer}>
 					<View style={styles.popupHeaderContainer}>
 						{fontsLoaded && (
@@ -73,7 +83,11 @@ const styles = StyleSheet.create({
 		borderRadius: 12.5,
 		backgroundColor: "white",
 		flexDirection: "column",
-		overflow: "hidden"
+		overflow: "hidden",
+		elevation: 5,
+		shadowOffset: { width: 2.5, height: 5 },
+		shadowOpacity: 0.3,
+		shadowRadius: 3
 	},
 	popupHeaderContainer: {
 		width: "100%",
@@ -119,7 +133,7 @@ const styles = StyleSheet.create({
 		fontSize: 20,
 		fontFamily: "Genos-Medium",
 		color: "white",
-		lineHeight: 25
+		lineHeight: 22.5
 	}
 })
 

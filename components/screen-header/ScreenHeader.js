@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
 	headerTitleText: {
 		fontSize: 22.5,
 		fontFamily: "Genos-Medium",
-		lineHeight: 27.5
+		lineHeight: 25
 	},
 	emptyView: {
 		width: 35

@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
 	},
 	languageTitleText: {
 		fontSize: 20,
-		lineHeight: 25
+		lineHeight: 22.5
 	},
 	selectedLanguageTitleText: {
 		fontFamily: "Genos-Medium",

@@ -98,6 +98,7 @@ const styles = StyleSheet.create({
 		flexDirection: "column",
 		alignItems: "center",
 		marginTop: 65,
+		paddingHorizontal: 15,
 		gap: 10
 	},
 	bgImage: {
@@ -150,6 +151,6 @@ const styles = StyleSheet.create({
 		fontSize: 20,
 		fontFamily: "Genos-Bold",
 		color: "white",
-		lineHeight: 25
+		lineHeight: 22.5
 	}
 })

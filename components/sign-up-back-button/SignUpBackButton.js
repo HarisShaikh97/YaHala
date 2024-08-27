@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
 	actionButtonText: {
 		fontSize: 20,
 		fontFamily: "Genos-Regular",
-		lineHeight: 25,
+		lineHeight: 22.5,
 		color: "#2796C4"
 	}
 })

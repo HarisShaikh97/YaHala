@@ -77,7 +77,8 @@ const styles = StyleSheet.create({
 		width: 135,
 		borderRadius: 67.5,
 		borderWidth: 1.5,
-		backgroundColor: "white"
+		backgroundColor: "white",
+		overflow: "hidden"
 	},
 	unSelectedGenderButton: {
 		borderColor: "rgba(0, 0, 0, 0.1)"
@@ -101,7 +102,8 @@ const styles = StyleSheet.create({
 	},
 	genderTitleText: {
 		fontSize: 20,
-		fontFamily: "Genos-Regular"
+		fontFamily: "Genos-Regular",
+		marginVertical: 5
 	},
 	selectedGenderTitleText: {
 		color: "#2796C4"
